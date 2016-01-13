@@ -1,0 +1,507 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		40C6C0B21C46568700C042A9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C6C0B11C46568700C042A9 /* AppDelegate.swift */; };
+		40C6C0B41C46568700C042A9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C6C0B31C46568700C042A9 /* ViewController.swift */; };
+		40C6C0B71C46568700C042A9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 40C6C0B51C46568700C042A9 /* Main.storyboard */; };
+		40C6C0B91C46568700C042A9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 40C6C0B81C46568700C042A9 /* Assets.xcassets */; };
+		40C6C0BC1C46568700C042A9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 40C6C0BA1C46568700C042A9 /* LaunchScreen.storyboard */; };
+		40C6C0C71C46568700C042A9 /* HarvesterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C6C0C61C46568700C042A9 /* HarvesterTests.swift */; };
+		40C6C0D21C46568700C042A9 /* HarvesterUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C6C0D11C46568700C042A9 /* HarvesterUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		40C6C0C31C46568700C042A9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 40C6C0A61C46568700C042A9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 40C6C0AD1C46568700C042A9;
+			remoteInfo = Harvester;
+		};
+		40C6C0CE1C46568700C042A9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 40C6C0A61C46568700C042A9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 40C6C0AD1C46568700C042A9;
+			remoteInfo = Harvester;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		40C6C0AE1C46568700C042A9 /* Harvester.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Harvester.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		40C6C0B11C46568700C042A9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		40C6C0B31C46568700C042A9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		40C6C0B61C46568700C042A9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		40C6C0B81C46568700C042A9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		40C6C0BB1C46568700C042A9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		40C6C0BD1C46568700C042A9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		40C6C0C21C46568700C042A9 /* HarvesterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HarvesterTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		40C6C0C61C46568700C042A9 /* HarvesterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HarvesterTests.swift; sourceTree = "<group>"; };
+		40C6C0C81C46568700C042A9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		40C6C0CD1C46568700C042A9 /* HarvesterUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HarvesterUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		40C6C0D11C46568700C042A9 /* HarvesterUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HarvesterUITests.swift; sourceTree = "<group>"; };
+		40C6C0D31C46568700C042A9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		40C6C0AB1C46568700C042A9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		40C6C0BF1C46568700C042A9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		40C6C0CA1C46568700C042A9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		40C6C0A51C46568700C042A9 = {
+			isa = PBXGroup;
+			children = (
+				40C6C0B01C46568700C042A9 /* Harvester */,
+				40C6C0C51C46568700C042A9 /* HarvesterTests */,
+				40C6C0D01C46568700C042A9 /* HarvesterUITests */,
+				40C6C0AF1C46568700C042A9 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		40C6C0AF1C46568700C042A9 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				40C6C0AE1C46568700C042A9 /* Harvester.app */,
+				40C6C0C21C46568700C042A9 /* HarvesterTests.xctest */,
+				40C6C0CD1C46568700C042A9 /* HarvesterUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		40C6C0B01C46568700C042A9 /* Harvester */ = {
+			isa = PBXGroup;
+			children = (
+				40C6C0B11C46568700C042A9 /* AppDelegate.swift */,
+				40C6C0B31C46568700C042A9 /* ViewController.swift */,
+				40C6C0B51C46568700C042A9 /* Main.storyboard */,
+				40C6C0B81C46568700C042A9 /* Assets.xcassets */,
+				40C6C0BA1C46568700C042A9 /* LaunchScreen.storyboard */,
+				40C6C0BD1C46568700C042A9 /* Info.plist */,
+			);
+			path = Harvester;
+			sourceTree = "<group>";
+		};
+		40C6C0C51C46568700C042A9 /* HarvesterTests */ = {
+			isa = PBXGroup;
+			children = (
+				40C6C0C61C46568700C042A9 /* HarvesterTests.swift */,
+				40C6C0C81C46568700C042A9 /* Info.plist */,
+			);
+			path = HarvesterTests;
+			sourceTree = "<group>";
+		};
+		40C6C0D01C46568700C042A9 /* HarvesterUITests */ = {
+			isa = PBXGroup;
+			children = (
+				40C6C0D11C46568700C042A9 /* HarvesterUITests.swift */,
+				40C6C0D31C46568700C042A9 /* Info.plist */,
+			);
+			path = HarvesterUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		40C6C0AD1C46568700C042A9 /* Harvester */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 40C6C0D61C46568700C042A9 /* Build configuration list for PBXNativeTarget "Harvester" */;
+			buildPhases = (
+				40C6C0AA1C46568700C042A9 /* Sources */,
+				40C6C0AB1C46568700C042A9 /* Frameworks */,
+				40C6C0AC1C46568700C042A9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Harvester;
+			productName = Harvester;
+			productReference = 40C6C0AE1C46568700C042A9 /* Harvester.app */;
+			productType = "com.apple.product-type.application";
+		};
+		40C6C0C11C46568700C042A9 /* HarvesterTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 40C6C0D91C46568700C042A9 /* Build configuration list for PBXNativeTarget "HarvesterTests" */;
+			buildPhases = (
+				40C6C0BE1C46568700C042A9 /* Sources */,
+				40C6C0BF1C46568700C042A9 /* Frameworks */,
+				40C6C0C01C46568700C042A9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				40C6C0C41C46568700C042A9 /* PBXTargetDependency */,
+			);
+			name = HarvesterTests;
+			productName = HarvesterTests;
+			productReference = 40C6C0C21C46568700C042A9 /* HarvesterTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		40C6C0CC1C46568700C042A9 /* HarvesterUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 40C6C0DC1C46568700C042A9 /* Build configuration list for PBXNativeTarget "HarvesterUITests" */;
+			buildPhases = (
+				40C6C0C91C46568700C042A9 /* Sources */,
+				40C6C0CA1C46568700C042A9 /* Frameworks */,
+				40C6C0CB1C46568700C042A9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				40C6C0CF1C46568700C042A9 /* PBXTargetDependency */,
+			);
+			name = HarvesterUITests;
+			productName = HarvesterUITests;
+			productReference = 40C6C0CD1C46568700C042A9 /* HarvesterUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		40C6C0A61C46568700C042A9 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0720;
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = SmartRecruiters;
+				TargetAttributes = {
+					40C6C0AD1C46568700C042A9 = {
+						CreatedOnToolsVersion = 7.2;
+					};
+					40C6C0C11C46568700C042A9 = {
+						CreatedOnToolsVersion = 7.2;
+						TestTargetID = 40C6C0AD1C46568700C042A9;
+					};
+					40C6C0CC1C46568700C042A9 = {
+						CreatedOnToolsVersion = 7.2;
+						TestTargetID = 40C6C0AD1C46568700C042A9;
+					};
+				};
+			};
+			buildConfigurationList = 40C6C0A91C46568700C042A9 /* Build configuration list for PBXProject "Harvester" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 40C6C0A51C46568700C042A9;
+			productRefGroup = 40C6C0AF1C46568700C042A9 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				40C6C0AD1C46568700C042A9 /* Harvester */,
+				40C6C0C11C46568700C042A9 /* HarvesterTests */,
+				40C6C0CC1C46568700C042A9 /* HarvesterUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		40C6C0AC1C46568700C042A9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				40C6C0BC1C46568700C042A9 /* LaunchScreen.storyboard in Resources */,
+				40C6C0B91C46568700C042A9 /* Assets.xcassets in Resources */,
+				40C6C0B71C46568700C042A9 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		40C6C0C01C46568700C042A9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		40C6C0CB1C46568700C042A9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		40C6C0AA1C46568700C042A9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				40C6C0B41C46568700C042A9 /* ViewController.swift in Sources */,
+				40C6C0B21C46568700C042A9 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		40C6C0BE1C46568700C042A9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				40C6C0C71C46568700C042A9 /* HarvesterTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		40C6C0C91C46568700C042A9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				40C6C0D21C46568700C042A9 /* HarvesterUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		40C6C0C41C46568700C042A9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 40C6C0AD1C46568700C042A9 /* Harvester */;
+			targetProxy = 40C6C0C31C46568700C042A9 /* PBXContainerItemProxy */;
+		};
+		40C6C0CF1C46568700C042A9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 40C6C0AD1C46568700C042A9 /* Harvester */;
+			targetProxy = 40C6C0CE1C46568700C042A9 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		40C6C0B51C46568700C042A9 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				40C6C0B61C46568700C042A9 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		40C6C0BA1C46568700C042A9 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				40C6C0BB1C46568700C042A9 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		40C6C0D41C46568700C042A9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		40C6C0D51C46568700C042A9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		40C6C0D71C46568700C042A9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Harvester/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.sr.Harvester;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		40C6C0D81C46568700C042A9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Harvester/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.sr.Harvester;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		40C6C0DA1C46568700C042A9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = HarvesterTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.sr.HarvesterTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Harvester.app/Harvester";
+			};
+			name = Debug;
+		};
+		40C6C0DB1C46568700C042A9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = HarvesterTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.sr.HarvesterTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Harvester.app/Harvester";
+			};
+			name = Release;
+		};
+		40C6C0DD1C46568700C042A9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = HarvesterUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.sr.HarvesterUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = Harvester;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		40C6C0DE1C46568700C042A9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = HarvesterUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.sr.HarvesterUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = Harvester;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		40C6C0A91C46568700C042A9 /* Build configuration list for PBXProject "Harvester" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				40C6C0D41C46568700C042A9 /* Debug */,
+				40C6C0D51C46568700C042A9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		40C6C0D61C46568700C042A9 /* Build configuration list for PBXNativeTarget "Harvester" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				40C6C0D71C46568700C042A9 /* Debug */,
+				40C6C0D81C46568700C042A9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		40C6C0D91C46568700C042A9 /* Build configuration list for PBXNativeTarget "HarvesterTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				40C6C0DA1C46568700C042A9 /* Debug */,
+				40C6C0DB1C46568700C042A9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		40C6C0DC1C46568700C042A9 /* Build configuration list for PBXNativeTarget "HarvesterUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				40C6C0DD1C46568700C042A9 /* Debug */,
+				40C6C0DE1C46568700C042A9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 40C6C0A61C46568700C042A9 /* Project object */;
+}
