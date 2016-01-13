@@ -15,6 +15,7 @@
 		40C6C0C71C46568700C042A9 /* HarvesterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C6C0C61C46568700C042A9 /* HarvesterTests.swift */; };
 		40C6C0D21C46568700C042A9 /* HarvesterUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C6C0D11C46568700C042A9 /* HarvesterUITests.swift */; };
 		40C6C0E01C465AC700C042A9 /* CaptureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C6C0DF1C465AC700C042A9 /* CaptureViewController.swift */; };
+		40C6C0E21C466A5F00C042A9 /* VideoSamplerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C6C0E11C466A5F00C042A9 /* VideoSamplerDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		40C6C0D11C46568700C042A9 /* HarvesterUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HarvesterUITests.swift; sourceTree = "<group>"; };
 		40C6C0D31C46568700C042A9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		40C6C0DF1C465AC700C042A9 /* CaptureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CaptureViewController.swift; sourceTree = "<group>"; };
+		40C6C0E11C466A5F00C042A9 /* VideoSamplerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoSamplerDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 				40C6C0BA1C46568700C042A9 /* LaunchScreen.storyboard */,
 				40C6C0BD1C46568700C042A9 /* Info.plist */,
 				40C6C0DF1C465AC700C042A9 /* CaptureViewController.swift */,
+				40C6C0E11C466A5F00C042A9 /* VideoSamplerDelegate.swift */,
 			);
 			path = Harvester;
 			sourceTree = "<group>";
@@ -263,6 +266,7 @@
 				40C6C0B41C46568700C042A9 /* ViewController.swift in Sources */,
 				40C6C0E01C465AC700C042A9 /* CaptureViewController.swift in Sources */,
 				40C6C0B21C46568700C042A9 /* AppDelegate.swift in Sources */,
+				40C6C0E21C466A5F00C042A9 /* VideoSamplerDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

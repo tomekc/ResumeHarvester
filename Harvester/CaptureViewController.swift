@@ -11,10 +11,18 @@ import AVFoundation
 
 class CaptureViewController: UIViewController {
 
+    var detector:CIDetector!
+    var videoSampler:VideoSamplerDelegate!
+    var sessionQueue: dispatch_queue_t!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        sessionQueue = dispatch_queue_create("AVSessionQueue", DISPATCH_QUEUE_SERIAL)
+        self.detector = buildDetector()
+        self.videoSampler = VideoSamplerDelegate(withDetector: self.detector)
         setupCapture()
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -22,14 +30,35 @@ class CaptureViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    // Create feature detector
+    func buildDetector() -> CIDetector {
+        let options:[String:AnyObject] = [
+            CIDetectorAccuracy: CIDetectorAccuracyHigh,
+            CIDetectorAspectRatio: 1.41
+        ]
+        return CIDetector(ofType: CIDetectorTypeRectangle, context: nil, options: options)
+    }
 
     func setupCapture() {
         do {
             print("Starting capture session")
-        let session = AVCaptureSession()
-        let device = AVCaptureDevice.defaultDeviceWithMediaType(AVMediaTypeVideo)
-        let input = try AVCaptureDeviceInput(device: device)
-        session.addInput(input)
+            // Create capture session
+            let session = AVCaptureSession()
+            // Photo preset gives best resolution
+            session.sessionPreset = AVCaptureSessionPresetPhoto
+            
+            let device = AVCaptureDevice.defaultDeviceWithMediaType(AVMediaTypeVideo)
+
+            let input = try AVCaptureDeviceInput(device: device)
+            session.addInput(input)
+            
+            // Build video output
+            let videoOutput = AVCaptureVideoDataOutput()
+            videoOutput.videoSettings = [ kCVPixelBufferPixelFormatTypeKey: Int(kCVPixelFormatType_32BGRA)]
+            videoOutput.alwaysDiscardsLateVideoFrames = true
+            videoOutput.setSampleBufferDelegate(self.videoSampler, queue: sessionQueue)
+            
+            session.addOutput(videoOutput)
             
             let layer = AVCaptureVideoPreviewLayer(session: session)
             layer.videoGravity = AVLayerVideoGravityResizeAspectFill
