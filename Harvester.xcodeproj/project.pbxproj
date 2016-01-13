@@ -14,6 +14,7 @@
 		40C6C0BC1C46568700C042A9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 40C6C0BA1C46568700C042A9 /* LaunchScreen.storyboard */; };
 		40C6C0C71C46568700C042A9 /* HarvesterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C6C0C61C46568700C042A9 /* HarvesterTests.swift */; };
 		40C6C0D21C46568700C042A9 /* HarvesterUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C6C0D11C46568700C042A9 /* HarvesterUITests.swift */; };
+		40C6C0E01C465AC700C042A9 /* CaptureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C6C0DF1C465AC700C042A9 /* CaptureViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		40C6C0CD1C46568700C042A9 /* HarvesterUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HarvesterUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		40C6C0D11C46568700C042A9 /* HarvesterUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HarvesterUITests.swift; sourceTree = "<group>"; };
 		40C6C0D31C46568700C042A9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		40C6C0DF1C465AC700C042A9 /* CaptureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CaptureViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +105,7 @@
 				40C6C0B81C46568700C042A9 /* Assets.xcassets */,
 				40C6C0BA1C46568700C042A9 /* LaunchScreen.storyboard */,
 				40C6C0BD1C46568700C042A9 /* Info.plist */,
+				40C6C0DF1C465AC700C042A9 /* CaptureViewController.swift */,
 			);
 			path = Harvester;
 			sourceTree = "<group>";
@@ -193,6 +196,7 @@
 				TargetAttributes = {
 					40C6C0AD1C46568700C042A9 = {
 						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = UK77GSE53Q;
 					};
 					40C6C0C11C46568700C042A9 = {
 						CreatedOnToolsVersion = 7.2;
@@ -257,6 +261,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				40C6C0B41C46568700C042A9 /* ViewController.swift in Sources */,
+				40C6C0E01C465AC700C042A9 /* CaptureViewController.swift in Sources */,
 				40C6C0B21C46568700C042A9 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -399,10 +404,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Harvester/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sr.Harvester;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -410,10 +418,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Harvester/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sr.Harvester;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
