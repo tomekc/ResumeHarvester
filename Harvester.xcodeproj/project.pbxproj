@@ -411,6 +411,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Harvester/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sr.Harvester;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -425,6 +426,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Harvester/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sr.Harvester;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -499,6 +501,7 @@
 				40C6C0D81C46568700C042A9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		40C6C0D91C46568700C042A9 /* Build configuration list for PBXNativeTarget "HarvesterTests" */ = {
 			isa = XCConfigurationList;
@@ -507,6 +510,7 @@
 				40C6C0DB1C46568700C042A9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		40C6C0DC1C46568700C042A9 /* Build configuration list for PBXNativeTarget "HarvesterUITests" */ = {
 			isa = XCConfigurationList;
@@ -515,6 +519,7 @@
 				40C6C0DE1C46568700C042A9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

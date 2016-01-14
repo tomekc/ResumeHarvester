@@ -8,19 +8,26 @@
 
 import UIKit
 import AVFoundation
+import GLKit
 
 class CaptureViewController: UIViewController {
 
     var detector:CIDetector!
     var videoSampler:VideoSamplerDelegate!
     var sessionQueue: dispatch_queue_t!
+    var renderContext: CIContext!
+    var session:AVCaptureSession!
+    
+    // controls
+    @IBOutlet var previewImageView: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         sessionQueue = dispatch_queue_create("AVSessionQueue", DISPATCH_QUEUE_SERIAL)
         self.detector = buildDetector()
         self.videoSampler = VideoSamplerDelegate(withDetector: self.detector)
+        self.videoSampler.delegate = self.gotFeatures
         setupCapture()
 
     }
@@ -43,9 +50,9 @@ class CaptureViewController: UIViewController {
         do {
             print("Starting capture session")
             // Create capture session
-            let session = AVCaptureSession()
+            session = AVCaptureSession()
             // Photo preset gives best resolution
-            session.sessionPreset = AVCaptureSessionPresetPhoto
+            session.sessionPreset = AVCaptureSessionPresetMedium
             
             let device = AVCaptureDevice.defaultDeviceWithMediaType(AVMediaTypeVideo)
 
@@ -57,22 +64,32 @@ class CaptureViewController: UIViewController {
             videoOutput.videoSettings = [ kCVPixelBufferPixelFormatTypeKey: Int(kCVPixelFormatType_32BGRA)]
             videoOutput.alwaysDiscardsLateVideoFrames = true
             videoOutput.setSampleBufferDelegate(self.videoSampler, queue: sessionQueue)
-            
             session.addOutput(videoOutput)
             
-            let layer = AVCaptureVideoPreviewLayer(session: session)
-            layer.videoGravity = AVLayerVideoGravityResizeAspectFill
-            layer.bounds = self.view.bounds
-            layer.position = CGPoint(x: CGRectGetMidX(self.view.bounds), y: CGRectGetMidY(self.view.bounds))
-            self.view.layer.addSublayer(layer)
+            videoOutput.connectionWithMediaType(AVMediaTypeVideo).enabled = true
+            
+//            let layer = AVCaptureVideoPreviewLayer(session: session)
+//            layer.videoGravity = AVLayerVideoGravityResizeAspectFill
+//            layer.bounds = self.previewImageView.bounds
+//            layer.position = CGPoint(x: CGRectGetMidX(self.previewImageView.bounds), y: CGRectGetMidY(self.previewImageView.bounds))
+//            self.previewImageView.layer.addSublayer(layer)
             
             session.startRunning()
             
         } catch {
+            print("Camera error")
             let alert = UIAlertController(title: "Camera error", message: "Unable to use camera", preferredStyle: .Alert)
             self.presentViewController(alert, animated: true, completion: nil)
         }
         
+    }
+    
+    func gotFeatures(image:CIImage) {
+        dispatch_async(dispatch_get_main_queue(),{
+            let ctx = CIContext(options: nil)
+            let cgimage = ctx.createCGImage(image, fromRect: image.extent)
+            self.previewImageView.image = UIImage(CGImage: cgimage)
+        })
     }
     
     /*
