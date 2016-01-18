@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4004603A1C4D90320002515E /* SnapshotPreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 400460391C4D90320002515E /* SnapshotPreviewViewController.swift */; };
+		4004603D1C4D95E70002515E /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4004603C1C4D95E70002515E /* R.generated.swift */; };
 		40C6C0B21C46568700C042A9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C6C0B11C46568700C042A9 /* AppDelegate.swift */; };
 		40C6C0B41C46568700C042A9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C6C0B31C46568700C042A9 /* ViewController.swift */; };
 		40C6C0B71C46568700C042A9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 40C6C0B51C46568700C042A9 /* Main.storyboard */; };
@@ -16,6 +18,7 @@
 		40C6C0D21C46568700C042A9 /* HarvesterUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C6C0D11C46568700C042A9 /* HarvesterUITests.swift */; };
 		40C6C0E01C465AC700C042A9 /* CaptureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C6C0DF1C465AC700C042A9 /* CaptureViewController.swift */; };
 		40C6C0E21C466A5F00C042A9 /* VideoSamplerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C6C0E11C466A5F00C042A9 /* VideoSamplerDelegate.swift */; };
+		FC1CD605B273B1B87A188A20 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F82F97CB7397B326B9151FF /* Pods.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +39,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1C8546824C0E7D6FA7E0176F /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		400460391C4D90320002515E /* SnapshotPreviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnapshotPreviewViewController.swift; sourceTree = "<group>"; };
+		4004603C1C4D95E70002515E /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
 		40C6C0AE1C46568700C042A9 /* Harvester.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Harvester.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		40C6C0B11C46568700C042A9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		40C6C0B31C46568700C042A9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -51,6 +57,8 @@
 		40C6C0D31C46568700C042A9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		40C6C0DF1C465AC700C042A9 /* CaptureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CaptureViewController.swift; sourceTree = "<group>"; };
 		40C6C0E11C466A5F00C042A9 /* VideoSamplerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoSamplerDelegate.swift; sourceTree = "<group>"; };
+		97F0FFB7333DE3BF37EF2A2E /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		9F82F97CB7397B326B9151FF /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +66,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FC1CD605B273B1B87A188A20 /* Pods.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,6 +94,8 @@
 				40C6C0C51C46568700C042A9 /* HarvesterTests */,
 				40C6C0D01C46568700C042A9 /* HarvesterUITests */,
 				40C6C0AF1C46568700C042A9 /* Products */,
+				DA64B5AA5A915DEE9ED67A04 /* Pods */,
+				614F57CEB54F2AEF759F6415 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -101,6 +112,7 @@
 		40C6C0B01C46568700C042A9 /* Harvester */ = {
 			isa = PBXGroup;
 			children = (
+				4004603C1C4D95E70002515E /* R.generated.swift */,
 				40C6C0B11C46568700C042A9 /* AppDelegate.swift */,
 				40C6C0B31C46568700C042A9 /* ViewController.swift */,
 				40C6C0B51C46568700C042A9 /* Main.storyboard */,
@@ -109,6 +121,7 @@
 				40C6C0BD1C46568700C042A9 /* Info.plist */,
 				40C6C0DF1C465AC700C042A9 /* CaptureViewController.swift */,
 				40C6C0E11C466A5F00C042A9 /* VideoSamplerDelegate.swift */,
+				400460391C4D90320002515E /* SnapshotPreviewViewController.swift */,
 			);
 			path = Harvester;
 			sourceTree = "<group>";
@@ -131,6 +144,23 @@
 			path = HarvesterUITests;
 			sourceTree = "<group>";
 		};
+		614F57CEB54F2AEF759F6415 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9F82F97CB7397B326B9151FF /* Pods.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DA64B5AA5A915DEE9ED67A04 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				97F0FFB7333DE3BF37EF2A2E /* Pods.debug.xcconfig */,
+				1C8546824C0E7D6FA7E0176F /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -138,9 +168,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 40C6C0D61C46568700C042A9 /* Build configuration list for PBXNativeTarget "Harvester" */;
 			buildPhases = (
+				C822D92FFF6F998FAA9CD1FF /* Check Pods Manifest.lock */,
+				4004603B1C4D95AC0002515E /* ShellScript */,
 				40C6C0AA1C46568700C042A9 /* Sources */,
 				40C6C0AB1C46568700C042A9 /* Frameworks */,
 				40C6C0AC1C46568700C042A9 /* Resources */,
+				CE5503121730385B0C497C38 /* Embed Pods Frameworks */,
+				8B3343776F01CB4E68323C1D /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -258,15 +292,79 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		4004603B1C4D95AC0002515E /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"$PODS_ROOT/R.swift/rswift\" \"$SRCROOT\"";
+			showEnvVarsInLog = 0;
+		};
+		8B3343776F01CB4E68323C1D /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C822D92FFF6F998FAA9CD1FF /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		CE5503121730385B0C497C38 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		40C6C0AA1C46568700C042A9 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				40C6C0B41C46568700C042A9 /* ViewController.swift in Sources */,
+				4004603A1C4D90320002515E /* SnapshotPreviewViewController.swift in Sources */,
 				40C6C0E01C465AC700C042A9 /* CaptureViewController.swift in Sources */,
 				40C6C0B21C46568700C042A9 /* AppDelegate.swift in Sources */,
 				40C6C0E21C466A5F00C042A9 /* VideoSamplerDelegate.swift in Sources */,
+				4004603D1C4D95E70002515E /* R.generated.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -357,7 +455,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -396,7 +494,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -406,6 +504,7 @@
 		};
 		40C6C0D71C46568700C042A9 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 97F0FFB7333DE3BF37EF2A2E /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -421,6 +520,7 @@
 		};
 		40C6C0D81C46568700C042A9 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1C8546824C0E7D6FA7E0176F /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";

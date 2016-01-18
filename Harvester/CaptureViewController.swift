@@ -92,6 +92,12 @@ class CaptureViewController: UIViewController {
         })
     }
     
+    
+    @IBAction func doSnap(sender: AnyObject) {
+        print("SNAP!")
+    }
+    
+    
     /*
     // MARK: - Navigation
 
