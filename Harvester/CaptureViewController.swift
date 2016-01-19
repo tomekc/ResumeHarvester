@@ -17,6 +17,7 @@ class CaptureViewController: UIViewController {
     var sessionQueue: dispatch_queue_t!
     var renderContext: CIContext!
     var session:AVCaptureSession!
+    var stillImageOutput:AVCaptureStillImageOutput!
     
     // controls
     @IBOutlet var previewImageView: UIImageView!
@@ -28,8 +29,17 @@ class CaptureViewController: UIViewController {
         self.detector = buildDetector()
         self.videoSampler = VideoSamplerDelegate(withDetector: self.detector)
         self.videoSampler.delegate = self.gotFeatures
-        setupCapture()
 
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        setupCapture()
+        
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        session.stopRunning()
     }
 
     override func didReceiveMemoryWarning() {
@@ -52,7 +62,7 @@ class CaptureViewController: UIViewController {
             // Create capture session
             session = AVCaptureSession()
             // Photo preset gives best resolution
-            session.sessionPreset = AVCaptureSessionPresetMedium
+            session.sessionPreset = AVCaptureSessionPresetPhoto
             
             let device = AVCaptureDevice.defaultDeviceWithMediaType(AVMediaTypeVideo)
 
@@ -68,6 +78,9 @@ class CaptureViewController: UIViewController {
             
             videoOutput.connectionWithMediaType(AVMediaTypeVideo).enabled = true
             
+            self.stillImageOutput = AVCaptureStillImageOutput()
+            session.addOutput(stillImageOutput)
+            
 //            let layer = AVCaptureVideoPreviewLayer(session: session)
 //            layer.videoGravity = AVLayerVideoGravityResizeAspectFill
 //            layer.bounds = self.previewImageView.bounds
@@ -78,7 +91,7 @@ class CaptureViewController: UIViewController {
             
         } catch {
             print("Camera error")
-            let alert = UIAlertController(title: "Camera error", message: "Unable to use camera", preferredStyle: .Alert)
+            let alert = UIAlertController(title: "Camera error", message: "Unable to access camera. Is it present?", preferredStyle: .Alert)
             self.presentViewController(alert, animated: true, completion: nil)
         }
         
@@ -87,25 +100,64 @@ class CaptureViewController: UIViewController {
     func gotFeatures(image:CIImage) {
         dispatch_async(dispatch_get_main_queue(),{
             let ctx = CIContext(options: nil)
+//            print("Image extent = \(image.extent.width) x \(image.extent.height)")
             let cgimage = ctx.createCGImage(image, fromRect: image.extent)
             self.previewImageView.image = UIImage(CGImage: cgimage)
+//            print("UIImage \(self.previewImageView.image?.size.width) x \(self.previewImageView.image?.size.height)")
         })
+    }
+    
+    
+    func getImageOutputConnection(imageOutput:AVCaptureStillImageOutput) -> AVCaptureConnection? {
+        for conn in (imageOutput.connections as? [AVCaptureConnection])! {
+            for port in (conn.inputPorts as? [AVCaptureInputPort])! {
+                if port.mediaType == AVMediaTypeVideo {
+                    return conn
+                }
+            }
+        }
+        return nil
+    }
+    
+    func takeSnapshot() {
+        guard let connection = getImageOutputConnection(self.stillImageOutput) else { return }
+        
+        dispatch_suspend(self.sessionQueue)
+        
+        self.stillImageOutput.captureStillImageAsynchronouslyFromConnection(connection) { (sampleBuffer:CMSampleBuffer!, error:NSError!) -> Void in
+            // got image
+            if (error != nil) {
+                dispatch_resume(self.sessionQueue)
+                return
+            }
+            
+            let imageData = AVCaptureStillImageOutput.jpegStillImageNSDataRepresentation(sampleBuffer)
+            if let ciimage = CIImage(data: imageData, options: nil) {
+                print("Have image: \(ciimage.extent.width)x\(ciimage.extent.width)")
+            }
+            
+            
+        }
+        
     }
     
     
     @IBAction func doSnap(sender: AnyObject) {
         print("SNAP!")
+        //self.performSegueWithIdentifier(R.segue.captureViewController.showSnapshot, sender: nil)
+        self.takeSnapshot()
     }
     
     
-    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        if let preview = R.segue.captureViewController.showSnapshot(segue: segue) {
+            //preview.destinationViewController.image
+        }
     }
-    */
 
 }

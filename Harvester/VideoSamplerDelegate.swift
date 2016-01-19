@@ -31,6 +31,15 @@ class VideoSamplerDelegate : NSObject, AVCaptureVideoDataOutputSampleBufferDeleg
         getImageFromSampleBuffer(sampleBuffer)
     }
     
+    func sampleBufferToImage(sampleBuffer:CMSampleBuffer) -> CIImage? {
+        guard let imageBuffer = CMSampleBufferGetImageBuffer(sampleBuffer) else { return nil }
+        // Force the type change - pass through opaque buffer
+        let opaqueBuffer = Unmanaged<CVImageBuffer>.passUnretained(imageBuffer).toOpaque()
+        let pixelBuffer = Unmanaged<CVPixelBuffer>.fromOpaque(opaqueBuffer).takeUnretainedValue()
+        let sourceImage = CIImage(CVPixelBuffer: pixelBuffer, options: nil)
+        return sourceImage
+    }
+    
     // Create CIImage from pixel buffer
     func getImageFromSampleBuffer(sampleBuffer:CMSampleBuffer) {
         guard let imageBuffer = CMSampleBufferGetImageBuffer(sampleBuffer) else { return }

@@ -11,6 +11,7 @@ import UIKit
 class SnapshotPreviewViewController: UIViewController {
 
     
+    @IBOutlet var image: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()

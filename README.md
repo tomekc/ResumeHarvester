@@ -2,8 +2,12 @@
 
 This application is demonstrating AVFoundation and AVKit video capture and rectangle detection features.
 
-It is build on newest and greatest Swift (2.1) and Xcode (7.2)
+## Technical notes
 
+Project is build on newest and greatest Swift (2.1) and Xcode (7.2).
+CocoaPods are used for managing 3rd party dependencies, remember to open .xcworkspace instead of project.
+
+It uses R.swift for type-safe segue and view controller identifiers.
 
 ## Acknowledgements
 

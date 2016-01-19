@@ -69,8 +69,22 @@
                     <view key="view" contentMode="scaleToFill" id="EaK-xQ-2kL">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="syM-SI-hIs">
+                                <rect key="frame" x="0.0" y="20" width="600" height="580"/>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="syM-SI-hIs" secondAttribute="trailing" id="FDO-zs-Qkz"/>
+                            <constraint firstItem="6Ne-DH-m9T" firstAttribute="top" secondItem="syM-SI-hIs" secondAttribute="bottom" id="c08-ut-4bn"/>
+                            <constraint firstItem="syM-SI-hIs" firstAttribute="top" secondItem="xtM-Bo-PQK" secondAttribute="bottom" id="t6P-rJ-ovT"/>
+                            <constraint firstItem="syM-SI-hIs" firstAttribute="leading" secondItem="EaK-xQ-2kL" secondAttribute="leading" id="tQ1-Bs-Erz"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="image" destination="syM-SI-hIs" id="CkQ-AT-LML"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EE6-ac-qR4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
