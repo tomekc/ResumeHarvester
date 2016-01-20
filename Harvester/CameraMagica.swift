@@ -42,8 +42,36 @@ class CameraMagica : NSObject, AVCaptureVideoDataOutputSampleBufferDelegate {
     }
     
     func takeSnapshot(completion:(CIImage) -> ()) {
+        guard let connection = getImageOutputConnection(self.stillImageOutput) else { return }
         
+        dispatch_suspend(self.sessionQueue)
+        self.stillImageOutput.captureStillImageAsynchronouslyFromConnection(connection) { (sampleBuffer:CMSampleBuffer!, error:NSError!) -> Void in
+            // got image
+            if (error != nil) {
+                dispatch_resume(self.sessionQueue)
+                return
+            }
+            
+            let imageData = AVCaptureStillImageOutput.jpegStillImageNSDataRepresentation(sampleBuffer)
+            if let ciimage = CIImage(data: imageData, options: nil) {
+                print("Captured image: \(ciimage.extent.width)x\(ciimage.extent.width)")
+                dispatch_resume(self.sessionQueue)
+                completion(ciimage)
+            }
+        }
     }
+
+    
+    func takeSnapshotOfRectangularFeature(completion:(CIImage) -> ()) {
+        self.takeSnapshot { image in
+            if let rectangle = self.imageProcessor.detectRectangularFeature(image) {
+                let rectangleImage = self.imageProcessor.correctPerspectiveFeature(rectangle, image: image)
+                completion(rectangleImage)
+            }
+            
+        }
+    }
+    
     
     // ---------------------------------------------
 
@@ -85,6 +113,11 @@ class CameraMagica : NSObject, AVCaptureVideoDataOutputSampleBufferDelegate {
         view.drawableDepthFormat = GLKViewDrawableDepthFormat.Format24
         self.parentView.insertSubview(view, atIndex: 0)
         self.glView = view
+        
+        self.coreImageContext = CIContext(EAGLContext: self.glContext, options: [
+            kCIContextWorkingColorSpace : NSNull(),
+            kCIContextUseSoftwareRenderer : false
+            ])
     }
     
     
@@ -104,14 +137,20 @@ class CameraMagica : NSObject, AVCaptureVideoDataOutputSampleBufferDelegate {
             
             glView?.bindDrawable()
             self.coreImageContext?.drawImage(outputImage, inRect: self.parentView.bounds, fromRect: image.extent)
-            glView?.display()            
+            glView?.display()
             
         }
-        
-        
-        
-        
     }
-    
+
+    func getImageOutputConnection(imageOutput:AVCaptureStillImageOutput) -> AVCaptureConnection? {
+        for conn in (imageOutput.connections as? [AVCaptureConnection])! {
+            for port in (conn.inputPorts as? [AVCaptureInputPort])! {
+                if port.mediaType == AVMediaTypeVideo {
+                    return conn
+                }
+            }
+        }
+        return nil
+    }
     
 }

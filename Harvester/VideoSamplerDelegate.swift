@@ -11,6 +11,10 @@ import AVFoundation
 import AVKit
 
 
+/*****************/
+/* OBSOLETE CODE */
+/*  REMOVE SOON  */
+/*****************/
 
 class VideoSamplerDelegate : NSObject, AVCaptureVideoDataOutputSampleBufferDelegate {
 
