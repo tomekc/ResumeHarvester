@@ -16,5 +16,5 @@ Learning APIs for video capture is real pain, made easier by material available 
 * [Rectangle detection in C# and Xamarin](https://github.com/Krumelur/RectangleDetection.iOS)
 * [Great iOS8 day-by-day articles by Sam Davies](https://www.shinobicontrols.com/blog/ios8-day-by-day-day-13-coreimage-detectors)
 
-App icon contains artwork "profile" by Ryan Beck from the Noun Project
+App icon has been made using "Harvest Machine" icon by [João Proença](https://thenounproject.com/proenca.joao/) from the Noun Project
 
