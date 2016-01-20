@@ -19,6 +19,8 @@ class CaptureViewController: UIViewController {
     var session:AVCaptureSession!
     var stillImageOutput:AVCaptureStillImageOutput!
     
+    var croppedImage:UIImage!
+    
     // controls
     @IBOutlet var previewImageView: UIImageView!
     
@@ -100,10 +102,8 @@ class CaptureViewController: UIViewController {
     func gotFeatures(image:CIImage) {
         dispatch_async(dispatch_get_main_queue(),{
             let ctx = CIContext(options: nil)
-//            print("Image extent = \(image.extent.width) x \(image.extent.height)")
             let cgimage = ctx.createCGImage(image, fromRect: image.extent)
             self.previewImageView.image = UIImage(CGImage: cgimage)
-//            print("UIImage \(self.previewImageView.image?.size.width) x \(self.previewImageView.image?.size.height)")
         })
     }
     
@@ -119,7 +119,7 @@ class CaptureViewController: UIViewController {
         return nil
     }
     
-    func takeSnapshot() {
+    func takeSnapshot(completionHandler:(CIImage) -> ()) {
         guard let connection = getImageOutputConnection(self.stillImageOutput) else { return }
         
         dispatch_suspend(self.sessionQueue)
@@ -134,6 +134,7 @@ class CaptureViewController: UIViewController {
             let imageData = AVCaptureStillImageOutput.jpegStillImageNSDataRepresentation(sampleBuffer)
             if let ciimage = CIImage(data: imageData, options: nil) {
                 print("Have image: \(ciimage.extent.width)x\(ciimage.extent.width)")
+                completionHandler(ciimage)
             }
             
             
@@ -144,8 +145,16 @@ class CaptureViewController: UIViewController {
     
     @IBAction func doSnap(sender: AnyObject) {
         print("SNAP!")
-        //self.performSegueWithIdentifier(R.segue.captureViewController.showSnapshot, sender: nil)
-        self.takeSnapshot()
+        self.takeSnapshot { image in
+            print("Callback with image: \(image.extent.width)x\(image.extent.width)")
+            let features = self.detector.featuresInImage(image)
+            if let firstShape = features.first, rect = firstShape as? CIRectangleFeature {
+                // rec
+                let transformedImage = self.videoSampler.correctPerspective(image, feature: rect)
+                self.croppedImage = UIImage(CIImage: transformedImage)
+                self.performSegueWithIdentifier(R.segue.captureViewController.showSnapshot, sender: nil)
+            }
+        }
     }
     
     
@@ -154,9 +163,9 @@ class CaptureViewController: UIViewController {
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        // Pass the selected object to the new view controller.        
         if let preview = R.segue.captureViewController.showSnapshot(segue: segue) {
-            //preview.destinationViewController.image
+            preview.destinationViewController.image = self.croppedImage
         }
     }
 

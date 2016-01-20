@@ -81,4 +81,15 @@ class VideoSamplerDelegate : NSObject, AVCaptureVideoDataOutputSampleBufferDeleg
             return overlay.imageByCompositingOverImage(image)
     }
     
+    func correctPerspective(image:CIImage, feature:CIRectangleFeature) -> CIImage {
+        let params:[String:AnyObject] = [
+            "inputTopLeft": CIVector(CGPoint: feature.topLeft),
+            "inputTopRight": CIVector(CGPoint: feature.topRight),
+            "inputBottomLeft": CIVector(CGPoint: feature.bottomLeft),
+            "inputBottomRight": CIVector(CGPoint: feature.bottomRight),
+            
+        ]
+        return image.imageByApplyingFilter("CIPerspectiveCorrection", withInputParameters: params)
+    }
+    
 }

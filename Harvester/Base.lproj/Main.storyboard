@@ -83,12 +83,30 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="image" destination="syM-SI-hIs" id="CkQ-AT-LML"/>
+                        <outlet property="imageView" destination="syM-SI-hIs" id="Iec-2S-oFw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EE6-ac-qR4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1522" y="442"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="neg-ui-5xe">
+            <objects>
+                <viewController id="ZmZ-tw-gbz" customClass="ViewController" customModule="Harvester" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ESQ-50-r2C"/>
+                        <viewControllerLayoutGuide type="bottom" id="lel-9V-8tS"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Zog-v2-xWJ">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rTu-fb-ces" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1541" y="1252"/>
         </scene>
     </scenes>
 </document>

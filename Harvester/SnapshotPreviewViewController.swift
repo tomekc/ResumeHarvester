@@ -11,12 +11,15 @@ import UIKit
 class SnapshotPreviewViewController: UIViewController {
 
     
-    @IBOutlet var image: UIImageView!
+    @IBOutlet var imageView: UIImageView!
+
+    var image:UIImage?
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        self.imageView.image = image
     }
 
     override func didReceiveMemoryWarning() {
