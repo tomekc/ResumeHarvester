@@ -133,7 +133,8 @@ class CaptureViewController: UIViewController {
             
             let imageData = AVCaptureStillImageOutput.jpegStillImageNSDataRepresentation(sampleBuffer)
             if let ciimage = CIImage(data: imageData, options: nil) {
-                print("Have image: \(ciimage.extent.width)x\(ciimage.extent.width)")
+                print("Captured image: \(ciimage.extent.width)x\(ciimage.extent.width)")
+                dispatch_resume(self.sessionQueue)
                 completionHandler(ciimage)
             }
             
@@ -146,7 +147,6 @@ class CaptureViewController: UIViewController {
     @IBAction func doSnap(sender: AnyObject) {
         print("SNAP!")
         self.takeSnapshot { image in
-            print("Callback with image: \(image.extent.width)x\(image.extent.width)")
             let features = self.detector.featuresInImage(image)
             if let firstShape = features.first, rect = firstShape as? CIRectangleFeature {
                 // rec
