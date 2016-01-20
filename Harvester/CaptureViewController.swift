@@ -36,6 +36,9 @@ class CaptureViewController: UIViewController {
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
+        
+        // Setting up here, because in case of failure UIAlertController is presented
+        // which requires fully initialized view
         setupCapture()
         
     }
@@ -163,7 +166,7 @@ class CaptureViewController: UIViewController {
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.        
+        // Pass the selected object to the new view controller.
         if let preview = R.segue.captureViewController.showSnapshot(segue: segue) {
             preview.destinationViewController.image = self.croppedImage
         }
