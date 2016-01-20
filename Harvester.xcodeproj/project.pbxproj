@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		4004603A1C4D90320002515E /* SnapshotPreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 400460391C4D90320002515E /* SnapshotPreviewViewController.swift */; };
 		4004603D1C4D95E70002515E /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4004603C1C4D95E70002515E /* R.generated.swift */; };
+		40ACA5AF1C4FA6100058702C /* CameraMagica.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40ACA5AE1C4FA6100058702C /* CameraMagica.swift */; };
+		40ACA5B21C4FB4B60058702C /* CameraImageProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40ACA5B11C4FB4B60058702C /* CameraImageProcessor.swift */; };
 		40C6C0B21C46568700C042A9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C6C0B11C46568700C042A9 /* AppDelegate.swift */; };
 		40C6C0B41C46568700C042A9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C6C0B31C46568700C042A9 /* ViewController.swift */; };
 		40C6C0B71C46568700C042A9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 40C6C0B51C46568700C042A9 /* Main.storyboard */; };
@@ -42,6 +44,8 @@
 		1C8546824C0E7D6FA7E0176F /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		400460391C4D90320002515E /* SnapshotPreviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnapshotPreviewViewController.swift; sourceTree = "<group>"; };
 		4004603C1C4D95E70002515E /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
+		40ACA5AE1C4FA6100058702C /* CameraMagica.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraMagica.swift; sourceTree = "<group>"; };
+		40ACA5B11C4FB4B60058702C /* CameraImageProcessor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraImageProcessor.swift; sourceTree = "<group>"; };
 		40C6C0AE1C46568700C042A9 /* Harvester.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Harvester.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		40C6C0B11C46568700C042A9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		40C6C0B31C46568700C042A9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -87,6 +91,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		40ACA5B01C4FB3E80058702C /* CameraMagica */ = {
+			isa = PBXGroup;
+			children = (
+				40ACA5AE1C4FA6100058702C /* CameraMagica.swift */,
+				40ACA5B11C4FB4B60058702C /* CameraImageProcessor.swift */,
+			);
+			name = CameraMagica;
+			sourceTree = "<group>";
+		};
 		40C6C0A51C46568700C042A9 = {
 			isa = PBXGroup;
 			children = (
@@ -112,6 +125,7 @@
 		40C6C0B01C46568700C042A9 /* Harvester */ = {
 			isa = PBXGroup;
 			children = (
+				40ACA5B01C4FB3E80058702C /* CameraMagica */,
 				4004603C1C4D95E70002515E /* R.generated.swift */,
 				40C6C0B11C46568700C042A9 /* AppDelegate.swift */,
 				40C6C0B31C46568700C042A9 /* ViewController.swift */,
@@ -360,6 +374,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				40C6C0B41C46568700C042A9 /* ViewController.swift in Sources */,
+				40ACA5B21C4FB4B60058702C /* CameraImageProcessor.swift in Sources */,
+				40ACA5AF1C4FA6100058702C /* CameraMagica.swift in Sources */,
 				4004603A1C4D90320002515E /* SnapshotPreviewViewController.swift in Sources */,
 				40C6C0E01C465AC700C042A9 /* CaptureViewController.swift in Sources */,
 				40C6C0B21C46568700C042A9 /* AppDelegate.swift in Sources */,
