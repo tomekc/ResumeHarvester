@@ -18,8 +18,12 @@ class SnapshotPreviewViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        
         // Do any additional setup after loading the view.
+        print("Before assigning \(imageView.bounds.size)")
         self.imageView.image = image
+        print("After assigning \(imageView.bounds.size)")
+
     }
 
     override func didReceiveMemoryWarning() {

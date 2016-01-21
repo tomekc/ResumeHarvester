@@ -48,12 +48,13 @@ class CameraMagica : NSObject, AVCaptureVideoDataOutputSampleBufferDelegate {
         self.stillImageOutput.captureStillImageAsynchronouslyFromConnection(connection) { (sampleBuffer:CMSampleBuffer!, error:NSError!) -> Void in
             // got image
             if (error != nil) {
+                print("Frame capture error \(error)")
                 dispatch_resume(self.sessionQueue)
                 return
             }
             
             let imageData = AVCaptureStillImageOutput.jpegStillImageNSDataRepresentation(sampleBuffer)
-            if let ciimage = CIImage(data: imageData, options: nil) {
+            if let ciimage = CIImage(data: imageData, options: [ kCIImageColorSpace: NSNull() ]) {
                 print("Captured image: \(ciimage.extent.width)x\(ciimage.extent.width)")
                 dispatch_resume(self.sessionQueue)
                 completion(ciimage)
@@ -64,7 +65,8 @@ class CameraMagica : NSObject, AVCaptureVideoDataOutputSampleBufferDelegate {
     
     func takeSnapshotOfRectangularFeature(completion:(CIImage) -> ()) {
         self.takeSnapshot { image in
-            if let rectangle = self.imageProcessor.detectRectangularFeature(image) {
+            let rotated = self.imageProcessor.rotateImage(image)
+            if let rectangle = self.imageProcessor.detectRectangularFeature(rotated) {
                 let rectangleImage = self.imageProcessor.correctPerspectiveFeature(rectangle, image: image)
                 completion(rectangleImage)
             }

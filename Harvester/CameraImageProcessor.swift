@@ -26,14 +26,14 @@ class CameraImageProcessor {
         return sourceImage
     }
 
-    
+
     func overlayFeature(rectFeature: CIRectangleFeature?, image: CIImage) -> CIImage {
         if let feature = rectFeature {
-        return drawHighlightOverlayForPoints(image,
-                topLeft: feature.topLeft,
-                topRight: feature.topRight,
-                bottomLeft: feature.bottomLeft,
-                bottomRight: feature.bottomRight)
+            return drawHighlightOverlayForPoints(image,
+                    topLeft: feature.topLeft,
+                    topRight: feature.topRight,
+                    bottomLeft: feature.bottomLeft,
+                    bottomRight: feature.bottomRight)
         } else {
             return image
         }
@@ -55,14 +55,29 @@ class CameraImageProcessor {
         return overlay.imageByCompositingOverImage(image)
     }
 
-    func correctPerspectiveFeature(feature:CIRectangleFeature, image:CIImage) -> CIImage {
-        let params:[String:AnyObject] = [
-            "inputTopLeft": CIVector(CGPoint: feature.topLeft),
-            "inputTopRight": CIVector(CGPoint: feature.topRight),
-            "inputBottomLeft": CIVector(CGPoint: feature.bottomLeft),
-            "inputBottomRight": CIVector(CGPoint: feature.bottomRight),
+    func correctPerspectiveFeature(feature: CIRectangleFeature, image: CIImage) -> CIImage {
+        let params: [String:AnyObject] = [
+                "inputTopLeft": CIVector(CGPoint: feature.topLeft),
+                "inputTopRight": CIVector(CGPoint: feature.topRight),
+                "inputBottomLeft": CIVector(CGPoint: feature.bottomLeft),
+                "inputBottomRight": CIVector(CGPoint: feature.bottomRight),
         ]
         return image.imageByApplyingFilter("CIPerspectiveCorrection", withInputParameters: params)
+    }
+
+    func rotateImage(image: CIImage) -> CIImage {
+        if let transform = CIFilter(name: "CIAffineTransform") {
+            transform.setValue(image, forKey: kCIInputImageKey)
+            let rotation = NSValue(CGAffineTransform: CGAffineTransformMakeRotation(CGFloat(-90.0 * (M_PI / 180.0))))
+            transform.setValue(rotation, forKey: "inputTransform")
+            if let rotated = transform.outputImage {
+                return rotated
+            } else {
+                return image
+            }
+        } else {
+            return image
+        }
     }
 
     // -----------------------
@@ -75,7 +90,7 @@ class CameraImageProcessor {
         return CIDetector(ofType: CIDetectorTypeRectangle, context: nil, options: options)
     }
 
-    func detectRectangularFeature(image:CIImage) -> CIRectangleFeature? {
+    func detectRectangularFeature(image: CIImage) -> CIRectangleFeature? {
         let features = detector.featuresInImage(image)
         return features.first as? CIRectangleFeature
     }
