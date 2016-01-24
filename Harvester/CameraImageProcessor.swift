@@ -92,7 +92,35 @@ class CameraImageProcessor {
 
     func detectRectangularFeature(image: CIImage) -> CIRectangleFeature? {
         let features = detector.featuresInImage(image)
-        return features.first as? CIRectangleFeature
+        return largestFeature(features as! [CIRectangleFeature])
+    }
+    
+    // Calculates a comparable value of rectangle value
+    // i.e. half of perimeter
+    func featureSize(feature:CIRectangleFeature) -> Float {
+        let p1 = feature.topLeft
+        let p2 = feature.topRight
+        let width = hypotf(Float(p1.x - p2.x), Float(p1.y - p2.y))
+        
+        let p3 = feature.bottomLeft
+        let height = hypotf(Float(p1.x - p3.x), Float(p1.y - p3.y))
+        
+        return width + height
+    }
+    
+    func largestFeature(list:[CIRectangleFeature]) -> CIRectangleFeature? {
+        if list.count == 0 {
+            return nil
+        }
+        if list.count == 1 {
+            return list[0]
+        }
+        
+        let sorted = list.sort { a,b in
+            return featureSize(a) > featureSize(b)
+        }
+        
+        return sorted.first
     }
 
 }

@@ -60,7 +60,7 @@ class CameraMagica: NSObject, AVCaptureVideoDataOutputSampleBufferDelegate {
 
             let imageData = AVCaptureStillImageOutput.jpegStillImageNSDataRepresentation(sampleBuffer)
             if let ciimage = CIImage(data: imageData, options: [kCIImageColorSpace: NSNull()]) {
-                print("Captured image: \(ciimage.extent.width)x\(ciimage.extent.width)")
+                print("Captured image: \(ciimage.extent.width)x\(ciimage.extent.height)")
                 dispatch_resume(self.sessionQueue)
                 completion(ciimage)
             }
