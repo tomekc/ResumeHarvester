@@ -4,7 +4,7 @@ PODS:
   - R.swift.Library (1.0.1)
 
 DEPENDENCIES:
-  - R.swift
+  - R.swift (~> 1.1)
 
 SPEC CHECKSUMS:
   R.swift: d12a4b91df5dc148f60bd0731c0f0fe4ae2b720e
